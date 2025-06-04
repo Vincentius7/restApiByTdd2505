@@ -9,6 +9,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 @ActiveProfiles("test")
 public class ApiV1MemberControllerTest {
@@ -20,8 +22,7 @@ public class ApiV1MemberControllerTest {
     @DisplayName("테스트")
     void t1() {
         Long count = memberService.count();
-        System.out.println("안녕");
-        System.out.println(count == 7);
+        assertEquals(10, count);
     }
 
     @Test
